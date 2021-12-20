@@ -1,11 +1,12 @@
 # Desenvolvimento Web 2
 - Curso: TADS
-- Semestre: 2022/1
-- [Moodle](https://ava.ifpr.edu.br/)
+- Semestre: 2021/2
+- [Moodle](https://ava.ifpr.edu.br/course/view.php?id=6519)
 
 
 ## Tópicos
 - Javascript
+- Python
 
 ## Material
 
