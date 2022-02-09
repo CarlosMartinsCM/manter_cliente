@@ -28,5 +28,26 @@ def gerar():
 def logout():
     return "<h1>Adios!</h1>"
 
+# para simular um request passando parametros
+# http://127.0.0.1:5000/imc?peso=77&altura=1.55
+@app.route("/imc")
+def imc():
+    # funcao para pegar parametros do formulario ou url
+    from flask import request
+    # get("name da input")
+    # <input type='text' name='peso'>
+    peso = float(request.args.get("peso"))
+    altura = float(request.args.get("altura"))
+    imc_calc = peso / (altura * altura)
+
+    # if imc > 10:
+    #    mensagem=""
+    # if imc < 10:
+    #    pass
+
+    return f"seu imc é: {imc_calc}"
+    # return f"seu peso é: {peso} | altura = {altura}"
+    # return render_template('imc.html', numeros=numeros)
+
 # MUITO, MAS MUITO IMPORTANTE!!!! ATIVAR O DEGUB
 app.run(debug=True)
