@@ -1,6 +1,8 @@
 from flask import Flask, render_template
+# importando a variavel app do __init__.py
+from . import app
 
-app = Flask(__name__)
+# era o main.py -> renomado para "routes.py"
 
 # cria uma rota para: http://127.0.0.1:5000/index
 @app.route("/index")
