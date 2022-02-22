@@ -2,6 +2,8 @@
 *.7z
 .idea/
 
+manter/manter.db
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
