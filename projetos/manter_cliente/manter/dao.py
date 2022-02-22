@@ -1,6 +1,3 @@
-class Database:
-    # obtem uma conexao com o SQLite
-    pass
 
 class DaoCliente:
     """
@@ -20,4 +17,10 @@ class DaoCliente:
     def delete(self):  # D
         pass
     def findall(self): # R
-        pass
+        # pegar da Database a conexao com o BD
+        from manter.database import Database
+        conn = Database.get_connection()
+        res = conn.execute(
+            "SELECT * FROM cliente"
+        )
+        return res.fetchall()

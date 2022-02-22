@@ -27,21 +27,21 @@ def save():
 def delete(id):
     # select from cliente where id = id
     # consulta o banco, e recupera o cliente
-    cliente = Database.getCliente(id)
-    Database.delete(cliente.id)
-
+    # cliente = Database.getCliente(id)
+    # Database.delete(cliente.id)
     return "manter.html"
 
 @app.route("/update")
 def update():
-
     # alem dos atributos eh necessario o ID
-    cliente = Database.find(id)
+    # cliente = Database.find(id)
     # atualiza os campos...
-    Database.update(cliente)
+    # Database.update(cliente)
     return "manter.html"
 
-@app.route("/listall")
-def listall():
-    clientList = Database.findall()
-    return "manter.html"
+@app.route("/findall")
+def findall():
+    from manter.dao import DaoCliente
+    dao = DaoCliente()
+    clientes = dao.findall()
+    return render_template("manter.html", clientes=clientes)
