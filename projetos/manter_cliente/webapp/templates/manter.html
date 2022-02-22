@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        div.dataview{
-            display: grid;
-            grid-template-columns: repeat(4, max-content);
-        }
-        div.dataview div.th{
-            font-weight: bold;
-            background: #dfedf0;
-        }
-         div.dataview div{
-            padding: 0 20px;
-        }
-    </style>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block content %}
+<div class="page">
+
+<h3>Manter cliente</h3>
+
     <div class="dataview">
         <div class="th">ID</div>
         <div class="th">Nome</div>
@@ -31,5 +17,5 @@
     {% endfor %}
     </div>
 
-</body>
-</html>
+</div>
+{% endblock %}

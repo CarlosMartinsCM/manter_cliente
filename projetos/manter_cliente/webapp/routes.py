@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from manter.entities import Cliente
 # importando a variavel app do __init__.py
 from . import app
-@app.route("/index")
+@app.route("/")
 def index():
     return render_template('index.html')
 
@@ -13,14 +13,12 @@ def save():
     # chamar a classe que persiste no banco de dados
     # campos do formulario: nome, cpf, email
     # <form name='manter' ><input name='nome'>
-    form = request.form.get('manter')
-    form = form.to_dict()
-    nome = form['nome']
-    cpf = form['cpf']
-    email = form['email']
-    cliente = Cliente(nome, cpf, email)
-    # salva no banco (sqlite)
-    Database.create(cliente)
+    # nome = request.form['nome']
+    # cpf = request.form['cpf']
+    # email = request.form['email']
+    # cliente = Cliente(nome, cpf, email)
+    # # salva no banco (sqlite)
+    # Database.create(cliente)
     return "manter.html"
 
 @app.route("/delete/<id>")
@@ -39,7 +37,7 @@ def update():
     # Database.update(cliente)
     return "manter.html"
 
-@app.route("/findall")
+@app.route("/cliente/findall/")
 def findall():
     from manter.dao import DaoCliente
     dao = DaoCliente()

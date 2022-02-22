@@ -1,0 +1,11 @@
+div.dataview{
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+}
+div.dataview div.th{
+    font-weight: bold;
+    background: #dfedf0;
+}
+ div.dataview div{
+    padding: 0 20px;
+}
