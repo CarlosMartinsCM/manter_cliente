@@ -7,12 +7,13 @@
 ## Tópicos
 
 **python/flask:**
+- [Projeto manter-cliente](https://github.com/fscheidt/web2-21/projetos/manter_cliente)
 - [Projeto flask_basic](https://github.com/fscheidt/flask_basic)
 - [Estrutura projeto web flask](https://gist.github.com/fscheidt/5d987bbbfe7d7ae4b4bd0387a742f826)
 - https://github.com/microsoft/python-sample-vscode-flask-tutorial
 
-## outros
-[code share](https://docs.google.com/document/d/1flNJXGXJx-rWbj9rgwYNP553U1mCd9jKpsGeOloRRAY/edit)
+## Outros
+[copy paste](https://docs.google.com/document/d/1flNJXGXJx-rWbj9rgwYNP553U1mCd9jKpsGeOloRRAY/edit)
 
 ---
 
