@@ -1,6 +1,6 @@
 div.dataview{
     display: grid;
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(5, max-content);
 }
 div.dataview div.th{
     font-weight: bold;
@@ -11,4 +11,11 @@ div.dataview div.th{
 }
 form.manter label{
     display: block;
+    padding: 5px 0px;
+}
+form.manter label span{
+    display: inline-block;
+    min-width: 100px;
+    text-align: right;
+    padding: 0px 10px;
 }

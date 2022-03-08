@@ -26,11 +26,9 @@ def save():
 
 @app.route("/delete/<id>")
 def delete(id):
-    # select from cliente where id = id
-    # consulta o banco, e recupera o cliente
-    # cliente = Database.getCliente(id)
-    # Database.delete(cliente.id)
-    return "manter.html"
+    dao = DaoCliente()
+    dao.delete(id)
+    return findall()
 
 @app.route("/update")
 def update():

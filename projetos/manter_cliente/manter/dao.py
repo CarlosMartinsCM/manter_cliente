@@ -24,8 +24,16 @@ class DaoCliente:
         pass
     def update(self):  # U
         pass
-    def delete(self):  # D
-        pass
+    def delete(self, id):  # D
+        conn = Database.get_connection()
+        conn.execute(
+            f"""
+            DELETE from cliente
+            WHERE id = ?
+            """, (id)
+        )
+        conn.commit()
+
     def findall(self): # R
         # pegar da Database a conexao com o BD
         conn = Database.get_connection()
