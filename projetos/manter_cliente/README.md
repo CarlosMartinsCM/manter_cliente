@@ -1,4 +1,15 @@
 
+# Finalizar CRUD cliente
+- [x] findall
+- [ ] Save
+- [ ] Update/editar
+- [ ] findby nome
+
+## Arquitetura MVC
+- Model - entities.py (Cliente), Dao
+- View - html + jinja
+- Controller - routes.py
+
 # Flask + SQLite
 - database.py: abre uma conexão com o banco de dados
 - dao.py: Interface CRUD para entidade Cliente

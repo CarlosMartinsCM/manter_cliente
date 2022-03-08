@@ -1,3 +1,4 @@
+from manter.database import Database
 
 class DaoCliente:
     """
@@ -8,8 +9,17 @@ class DaoCliente:
         - Update
         - Delete
     """
-    def save(self):    # C
-        pass
+    def save(self, cliente):    # C
+        conn = Database.get_connection()
+        conn.execute(
+            f"""
+            INSERT INTO cliente (nome, cpf, email )
+            VALUES (?, ?, ?)
+            """,
+            ( cliente.nome, cliente.cpf, cliente.email )
+        )
+        conn.commit()
+
     def find(self):    # R
         pass
     def update(self):  # U
@@ -18,7 +28,6 @@ class DaoCliente:
         pass
     def findall(self): # R
         # pegar da Database a conexao com o BD
-        from manter.database import Database
         conn = Database.get_connection()
         res = conn.execute(
             "SELECT * FROM cliente"

@@ -9,3 +9,6 @@ div.dataview div.th{
  div.dataview div{
     padding: 0 20px;
 }
+form.manter label{
+    display: block;
+}

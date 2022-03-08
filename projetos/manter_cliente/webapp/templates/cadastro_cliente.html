@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="page">
+
+<h3>Cadastro cliente</h3>
+
+<form class="manter" action="/save" method="POST" >
+    <label>
+        Nome:
+        <input type="text" name="nome"/>
+    </label>
+    <label>
+        CPF:
+        <input type="text" name="cpf"/>
+    </label>
+    <label>
+        Email:
+        <input type="text" name="email"/>
+    </label>
+    <input type="submit" value="adicinar"/>
+</form>
+
+</div>
+{% endblock %}
