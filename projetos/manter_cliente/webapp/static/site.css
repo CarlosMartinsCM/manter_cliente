@@ -9,9 +9,19 @@ div.dataview div.th{
  div.dataview div{
     padding: 0 20px;
 }
+form.manter {
+    width: fit-content;
+    text-align: right;
+}
 form.manter label{
     display: block;
     padding: 5px 0px;
+}
+form.manter input[type='text']{
+    min-width: 200px;
+}
+a:visited{
+    color: blue;
 }
 form.manter label span{
     display: inline-block;

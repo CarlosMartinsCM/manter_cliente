@@ -37,5 +37,5 @@ class Database:
         connection.close()
 
 if __name__ == '__main__':
-    # Database.create_db()
+    Database.create_db()
     Database.select_clientes()

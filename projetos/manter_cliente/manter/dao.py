@@ -29,7 +29,7 @@ class DaoCliente:
         conn.execute(
             f"""
             DELETE from cliente
-            WHERE id = ?
+            WHERE id = ?    
             """, (id)
         )
         conn.commit()

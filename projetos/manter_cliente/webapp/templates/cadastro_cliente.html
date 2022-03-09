@@ -7,15 +7,15 @@
 <form class="manter" action="/save" method="POST" >
     <label>
         <span>Nome</span>
-        <input type="text" name="nome"/>
+        <input type="text" name="nome" autocomplete="off" minlength="2" required="required"/>
     </label>
     <label>
         <span>CPF</span>
-        <input type="text" name="cpf"/>
+        <input type="text" name="cpf" autocomplete="off"/>
     </label>
     <label>
         <span>Email</span>
-        <input type="text" name="email"/>
+        <input type="text" name="email" autocomplete="off"/>
     </label>
     <input type="submit" value="adicinar"/>
 </form>

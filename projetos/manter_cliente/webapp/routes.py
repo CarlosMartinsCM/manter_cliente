@@ -1,4 +1,7 @@
-from flask import Flask, render_template, request
+from flask import (
+    Flask, render_template, request, redirect
+)
+from manter.database import Database
 from manter.entities import Cliente
 from manter.dao import DaoCliente
 # importando a variavel app do __init__.py
@@ -28,7 +31,13 @@ def save():
 def delete(id):
     dao = DaoCliente()
     dao.delete(id)
-    return findall()
+    # return findall()
+    return redirect("/cliente/findall/")
+
+@app.route('/restore')
+def restore():
+    Database.create_db()
+    return redirect("/cliente/findall")
 
 @app.route("/update")
 def update():
