@@ -15,7 +15,10 @@
         <div> {{ cli[1] }} </div>
         <div> {{ cli[2] }} </div>
         <div> {{ cli[4] }} </div>
-        <div><a href="/delete/{{cli[0]}}">[X]</a></div>
+        <div>
+            <a href="/delete/{{cli[0]}}">[X]</a> |
+            <a href="/cliente/edit/{{cli[0]}}">[E]</a>
+        </div>
     {% endfor %}
     </div>
 

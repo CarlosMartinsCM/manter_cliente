@@ -12,19 +12,35 @@ def index():
 
 @app.route("/cliente/add")
 def cliente_add():
-    return render_template('cadastro_cliente.html')
+    return render_template('cadastro_cliente.html', cliente=None)
+
+@app.route("/cliente/edit/<id>")
+def cliente_edit(id):
+    # buscar na dao o cliente
+    # find_by_id(id) - recupera 1 cliente
+    dao = DaoCliente()
+    cliente = dao.find_by_id(id)
+    return render_template(
+        'cadastro_cliente.html',
+        cliente=cliente
+    )
 
 @app.route("/save", methods=["POST"])
 def save():
     # recebe os campos do formulario
     # criar o objeto cliente
     # chamar a dao que salva no banco de dados
+    id = request.form.get("id")
     nome = request.form.get("nome")
     cpf = request.form.get("cpf")
     email = request.form.get("email")
     cliente = Cliente(nome, cpf, email)
     dao = DaoCliente()
-    dao.save(cliente)
+    if id:
+        cliente.id = id
+        dao.update(cliente)
+    else:
+        dao.save(cliente)
     return findall()
 
 @app.route("/delete/<id>")

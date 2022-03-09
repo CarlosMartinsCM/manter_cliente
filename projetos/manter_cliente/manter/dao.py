@@ -22,8 +22,17 @@ class DaoCliente:
 
     def find(self):    # R
         pass
-    def update(self):  # U
-        pass
+    def update(self, cliente):  # U
+        conn = Database.get_connection()
+        conn.execute(
+            f"""
+            UPDATE cliente SET nome = ?, cpf = ? , email = ?
+            WHERE id = ?
+            """,
+            (cliente.nome, cliente.cpf, cliente.email, cliente.id)
+        )
+        conn.commit()
+
     def delete(self, id):  # D
         conn = Database.get_connection()
         conn.execute(
@@ -33,6 +42,15 @@ class DaoCliente:
             """, (id)
         )
         conn.commit()
+
+    def find_by_id(self, id): # R
+        # pegar da Database a conexao com o BD
+        conn = Database.get_connection()
+        res = conn.execute(
+            "SELECT * FROM cliente where id = ?",
+            (id)
+        )
+        return res.fetchone()
 
     def findall(self): # R
         # pegar da Database a conexao com o BD
